@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+    <div class="calculator bg-white rounded-2xl shadow-xl p-3 w-72">
+        <div class="display mb-2">
+            <input type="text" id="display" readonly
+                class="w-full text-right text-2xl font-mono py-3 px-2 bg-slate-50 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-300 box-border">
+        </div>
+        <div class="buttons grid grid-cols-[1fr_3rem] gap-2 w-full">
+            <!-- Left column: otherOperators, numbers, misc stacked -->
+            <div class="flex flex-col gap-2 min-w-0">
+                <div class="other-operators grid grid-cols-3 gap-2">
+                    <!-- other operators here -->
+                </div>
+                <div class="num-buttons grid grid-cols-3 gap-2">
+                    <!-- number buttons here -->
+                </div>
+                <div class="misc-buttons grid grid-cols-2 gap-2">
+                    <!-- misc buttons here -->
+                </div>
+            </div>
+            <!-- Right column: ÷, x, -, +, = stacked -->
+            <div class="operator-buttons flex flex-col gap-2">
+                <!-- operator buttons here -->
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
