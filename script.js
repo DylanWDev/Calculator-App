@@ -1,7 +1,10 @@
-const buttonContainer = document.getElementById('calculator-buttons');
+const buttonContainer = document.getElementById("calculator-buttons");
 const display = document.getElementById("display");
+const operators = ["+", "-", "x", "÷"];
 
 let currentNumber = "";
+
+display.value = "0";
 
 buttonContainer.addEventListener("click", (event) => {
     const clickedButton = event.target.closest("button");
@@ -9,10 +12,25 @@ buttonContainer.addEventListener("click", (event) => {
     if (!clickedButton) return;
 
     const buttonValue = clickedButton.textContent.trim();
+
+    if (buttonValue === "AC") {
+        currentNumber = "";
+        display.value = "0";
+        return;
+    }
+
     const numberValue = Number(buttonValue);
 
     if (buttonValue !== "" && !Number.isNaN(numberValue)) {
-        currentNumber += buttonValue;
+        if (currentNumber === "") {
+            currentNumber = buttonValue;
+        } else {
+            currentNumber += buttonValue;
+        }
+
+        display.value = currentNumber;
+    } else if (operators.includes(buttonValue)) {
+        currentNumber += ` ${buttonValue} `;
         display.value = currentNumber;
     }
 
@@ -20,9 +38,15 @@ buttonContainer.addEventListener("click", (event) => {
 });
 
 
-console.log(currentNumber)
-function basicArtithmetic() {
-    
-
+function addition(firstNumber, secondNumber) {
+    // let firstNumber = display.value
 }
 
+function subtraction(firstNumber, secondNumber) {
+}
+
+function multiplication(firstNumber, secondNumber) {
+}
+
+function division(firstNumber, secondNumber) {
+}
