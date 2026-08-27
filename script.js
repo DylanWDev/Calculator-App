@@ -1,4 +1,7 @@
 const buttonContainer = document.getElementById('calculator-buttons');
+const display = document.getElementById("display");
+
+let currentNumber = "";
 
 buttonContainer.addEventListener("click", (event) => {
     const clickedButton = event.target.closest("button");
@@ -6,15 +9,20 @@ buttonContainer.addEventListener("click", (event) => {
     if (!clickedButton) return;
 
     const buttonValue = clickedButton.textContent.trim();
+    const numberValue = Number(buttonValue);
 
-    inputDisplay(buttonValue);
-    console.log(buttonValue)
+    if (buttonValue !== "" && !Number.isNaN(numberValue)) {
+        currentNumber += buttonValue;
+        display.value = currentNumber;
+    }
+
+    console.log(display.value);
 });
 
 
-function inputDisplay(value) {
-    const display = document.getElementById('display');
-    display.value = value;
-}
+console.log(currentNumber)
+function basicArtithmetic() {
+    
 
+}
 
